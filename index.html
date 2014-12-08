@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WorkOut</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+	<link rel="stylesheet" href="css/c3.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="wrapper">
+		<button id="slideIt" class="btn btn-primary">Click</button>
+		<div id="workoutWrapper">
+			<div id="workoutFormWrapper">
+				<form role="form" id="workoutForm">
+					<div class="form-group">
+						<label for="theWorkoutDate">Datum</label>
+						<input type="text" id="theWorkoutDate" class="form-control" name="theWorkoutDate" value="2014-12-05">
+					</div>
+					<div class="form-group">
+						<label for="theType">Typ av träning</label>
+						<input type="text" id="theType" class="form-control" name="theType" value="Grupp">
+					</div>
+					<div class="form-group">
+						<label for="theWorkout">Aktivitet</label>
+						<input type="text" id="theWorkout" class="form-control" name="theActivity"  value="test">
+					</div>
+					<div class="form-group">
+						<label for="theDuration">Tid</label>
+						<input type="text" id="theDuration" class="form-control" name="theDuration" value="30">
+					</div>
+					<div class="form-group">
+						<label for="theWorkoutComment">Kommentar</label>
+						<textarea id="theWorkoutComment" class="form-control" name="theWorkoutComment">Bra</textarea>
+					</div>
+					<button id="theAddWorkoutBtn" class="btn btn-primary">Lägg till</button>
+					<span id="addWorkoutStatusGood" class="hidden text-success">Tillfälle tillagt</span>
+					<span id="addWorkoutStatusBad" class="hidden text-danger">Fel uppstod!</span>
+				</form>
+			</div>
+			<div id="workoutListWrapper">
+				
+			</div>
+		</div>
+		<div id="weighWrapper">
+			<div id="weighChartWrapper">
+				<div id="chart"></div>
+			</div>
+			<div id="weighFormWrapper">
+				<form role="form" action="" id="weighForm">
+					<div class="form-group">
+						<label for="theWeighDate">Datum</label>
+						<input type="text" id="theWeighDate" class="form-control" name="theWeighDate" value="2014-12-05">
+					</div>
+					<div class="form-group">
+						<label for="theWeigh">Massa</label>
+						<input type="text" id="theWeigh" class="form-control" name="theWeigh" value="Grupp">
+					</div>
+					<div class="form-group">
+						<label for="theBF">BF</label>
+						<input type="text" id="theBF" class="form-control" name="theBF"  value="test">
+					</div>
+					<div class="form-group">
+						<label for="theWater">Vatten</label>
+						<input type="text" id="theWater" class="form-control" name="theWater" value="30">
+					</div>
+					<div class="form-group">
+						<label for="theMuscle">Muskler</label>
+						<input type="text" id="theMuscle" class="form-control" name="theMuscle" value="30">
+					</div>
+					<div class="form-group">
+						<label for="theBone">Skelett</label>
+						<input type="text" id="theBone" class="form-control" name="theBone" value="30">
+					</div>
+					<button id="theAddWeighBtn" class="btn btn-primary">Lägg till</button>
+					<span id="addWeighStatusGood" class="hidden text-success">Tillfälle tillagt</span>
+					<span id="addWeighStatusBad" class="hidden text-danger">Fel uppstod!</span>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/d3.min.js" charset="utf-8"></script>
+	<script src="js/c3.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
