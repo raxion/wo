@@ -2,18 +2,44 @@ html, body {
 	height: 100%;
 	overflow-x: hidden;
 }
+
+header {
+	width: 100%;
+	height: 4em;
+	text-align: center;
+	padding: 1em;
+}
+
+header button {
+	width: 6em;
+}
 #wrapper {
-	border: 1px solid #000;
 	position: relative;
 	vertical-align: top;
 	height: 100%;
 }
+#loginSpan {
+	float: right;
+}
+#loginFormWrapper {
+	padding: 25px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 200px;
+	width: 250px;
+	border:1px dashed #333;
+    background-color:#eee;
 
+}
 #workoutWrapper {
-	width: 800px;
+	width: 90%;
 	position: absolute;
 	margin-top: 2em;
-	left: 20px;
+	left: 60px;
 	display: inline-block;
 }
 
@@ -27,16 +53,19 @@ html, body {
 #workoutListWrapper {
 	position: relative;
 	vertical-align: top;
-	width: 500px;
-	margin-top: 2em;
+	width: 600px;
+	margin-top: 1em;
 	margin-left: 2em;
 	display: inline-block;
+}
+#avgWorkouts {
+	font-size: 2em;
 }
 #weighWrapper {
 	position: absolute;
 	text-align: right;
 	vertical-align: top;
-	width: 800px;
+	width: 90%;
 	margin-top: 2em;
 	right: -100%;
 	display: inline-block;
@@ -55,7 +84,7 @@ html, body {
 	text-align: left;
 	position: relative;
 	vertical-align: top;
-	width: 500px;
+	width: 600px;
 	margin-top: 2em;
 	margin-right: 2em;
 	display: inline-block;
@@ -69,7 +98,9 @@ html, body {
 }
 
 
-
+.harry-potter-invisibility-cloak {
+	display: none;
+}
 
 .highlight {
 	width: 100%;
@@ -80,4 +111,17 @@ html, body {
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
 	border-radius: 4px;
+}
+
+.aWorkoutsComment {
+	display: none;
+
+}
+
+.form-good {
+	border-color: #3c763d;
+}
+
+.form-bad {
+	border-color: #a94442;
 }

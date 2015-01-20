@@ -12,29 +12,31 @@
 </head>
 <body>
 	<div id="wrapper">
-		<button id="slideIt" class="btn btn-primary">Click</button>
+		<header>
+			<button id="slideIt" class="btn btn-primary">Byt Vy</button><span id="loginSpan" class="glyphicon glyphicon-log-in"></span>
+		</header>
 		<div id="workoutWrapper">
 			<div id="workoutFormWrapper">
 				<form role="form" id="workoutForm">
 					<div class="form-group">
 						<label for="theWorkoutDate">Datum</label>
-						<input type="text" id="theWorkoutDate" class="form-control" name="theWorkoutDate" value="2014-12-05">
+						<input type="text" id="theWorkoutDate" class="form-control" name="theWorkoutDate" placeholder="YYY-MM-DD" required>
 					</div>
 					<div class="form-group">
 						<label for="theType">Typ av träning</label>
-						<input type="text" id="theType" class="form-control" name="theType" value="Grupp">
+						<input type="text" id="theType" class="form-control" name="theType" placeholder="Ex. Gruppträning" required>
 					</div>
 					<div class="form-group">
-						<label for="theWorkout">Aktivitet</label>
-						<input type="text" id="theWorkout" class="form-control" name="theActivity"  value="test">
+						<label for="theActivity">Aktivitet</label>
+						<input type="text" id="theActivity" class="form-control" name="theActivity"  placeholder="Ex. Spinning" required>
 					</div>
 					<div class="form-group">
 						<label for="theDuration">Tid</label>
-						<input type="text" id="theDuration" class="form-control" name="theDuration" value="30">
+						<input type="text" id="theDuration" class="form-control" name="theDuration" placeholder="Ex. 45min" required>
 					</div>
 					<div class="form-group">
 						<label for="theWorkoutComment">Kommentar</label>
-						<textarea id="theWorkoutComment" class="form-control" name="theWorkoutComment">Bra</textarea>
+						<textarea id="theWorkoutComment" class="form-control" name="theWorkoutComment"></textarea>
 					</div>
 					<button id="theAddWorkoutBtn" class="btn btn-primary">Lägg till</button>
 					<span id="addWorkoutStatusGood" class="hidden text-success">Tillfälle tillagt</span>
@@ -42,7 +44,8 @@
 				</form>
 			</div>
 			<div id="workoutListWrapper">
-				
+				<div id="avgWorkouts"></div>
+				<div id="workoutList"></div>
 			</div>
 		</div>
 		<div id="weighWrapper">
@@ -53,33 +56,47 @@
 				<form role="form" action="" id="weighForm">
 					<div class="form-group">
 						<label for="theWeighDate">Datum</label>
-						<input type="text" id="theWeighDate" class="form-control" name="theWeighDate" value="2014-12-05">
+						<input type="text" id="theWeighDate" class="form-control" name="theWeighDate" placeholder="YYYY-MM-DD" required>
 					</div>
 					<div class="form-group">
 						<label for="theWeigh">Massa</label>
-						<input type="text" id="theWeigh" class="form-control" name="theWeigh" value="Grupp">
+						<input type="text" id="theWeigh" class="form-control" name="theWeigh" placeholder="Vikt" required>
 					</div>
 					<div class="form-group">
 						<label for="theBF">BF</label>
-						<input type="text" id="theBF" class="form-control" name="theBF"  value="test">
+						<input type="text" id="theBF" class="form-control" name="theBF"  placeholder="Body Fat %" required>
 					</div>
 					<div class="form-group">
 						<label for="theWater">Vatten</label>
-						<input type="text" id="theWater" class="form-control" name="theWater" value="30">
+						<input type="text" id="theWater" class="form-control" name="theWater" placeholder="Vatten %" required>
 					</div>
 					<div class="form-group">
 						<label for="theMuscle">Muskler</label>
-						<input type="text" id="theMuscle" class="form-control" name="theMuscle" value="30">
+						<input type="text" id="theMuscle" class="form-control" name="theMuscle" placeholder="Muskler %" required>
 					</div>
 					<div class="form-group">
 						<label for="theBone">Skelett</label>
-						<input type="text" id="theBone" class="form-control" name="theBone" value="30">
+						<input type="text" id="theBone" class="form-control" name="theBone" placeholder="Skelett" required>
 					</div>
 					<button id="theAddWeighBtn" class="btn btn-primary">Lägg till</button>
-					<span id="addWeighStatusGood" class="hidden text-success">Tillfälle tillagt</span>
+					<span id="addWeighStatusGood" class="hidden text-success">Vägning tillagd</span>
 					<span id="addWeighStatusBad" class="hidden text-danger">Fel uppstod!</span>
 				</form>
 			</div>
+		</div>
+		<div id="loginFormWrapper" class="harry-potter-invisibility-cloak">
+			Log in
+			<form role="form" id="loginForm" action="">
+				<div class="form-group">
+					<label for="uname"></label>
+					<input type="text" id="uname" placeholder="Namn">
+				</div>
+				<div class="form-group">
+					<label for="upass"></label>
+					<input type="password" id="upass" placeholder="Lösen">
+				</div>
+				<button>Log in</button>
+			</form>
 		</div>
 	</div>
 	<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
@@ -88,5 +105,7 @@
 	<script src="js/d3.min.js" charset="utf-8"></script>
 	<script src="js/c3.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/workout.js"></script>
+	<script src="js/weight.js"></script>
 </body>
 </html>
