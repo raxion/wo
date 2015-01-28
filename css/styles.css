@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 html, body {
 	height: 100%;
 	overflow-x: hidden;
@@ -13,15 +17,10 @@ header {
 header button {
 	width: 6em;
 }
-#wrapper {
-	position: relative;
-	vertical-align: top;
-	height: 100%;
-}
-#loginSpan {
+.loginSpan {
 	float: right;
 }
-#loginFormWrapper {
+.loginFormWrapper {
 	padding: 25px;
 	position: fixed;
 	top: 0;
@@ -35,60 +34,28 @@ header button {
     background-color:#eee;
 
 }
-#workoutWrapper {
-	width: 90%;
-	position: absolute;
-	margin-top: 2em;
-	left: 60px;
-	display: inline-block;
+.content {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
-#workoutFormWrapper {
-	position: relative;
-	vertical-align: top;
-	width: 250px;
-	display: inline-block;
+.item-Wrapper {
+	width: 50%;
+	display: flex;
+}
+.item-FormWrapper {
+	padding: 2em;
+	width: 20%;
+	min-width: 200px;
+}
+.item-DataWrapper {
+	padding: 2em;
+	width: 100%;
+	min-width: 400px;
 }
 
-#workoutListWrapper {
-	position: relative;
-	vertical-align: top;
-	width: 600px;
-	margin-top: 1em;
-	margin-left: 2em;
-	display: inline-block;
-}
-#avgWorkouts {
-	font-size: 2em;
-}
-#weighWrapper {
-	position: absolute;
-	text-align: right;
-	vertical-align: top;
-	width: 90%;
-	margin-top: 2em;
-	right: -100%;
-	display: inline-block;
-}
-
-#weighFormWrapper {
-	text-align: left;
-	right: 0;
-	position: relative;
-	vertical-align: top;
-	width: 250px;
-	display: inline-block;
-}
-
-#weighChartWrapper {
-	text-align: left;
-	position: relative;
-	vertical-align: top;
-	width: 600px;
-	margin-top: 2em;
-	margin-right: 2em;
-	display: inline-block;
-}
 #addStatusGood {
 	margin-left: 1em;
 }
@@ -124,4 +91,11 @@ header button {
 
 .form-bad {
 	border-color: #a94442;
+}
+
+
+@media screen and (max-width: 1219px) {
+	.item-Wrapper {
+		width: 100%;
+	}
 }
