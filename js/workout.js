@@ -2,6 +2,8 @@ $(function() {
 	$("#theAddWorkoutBtn").on("click", function(e) {
 		e.preventDefault();
 		var theData = transformFormData(getFormData("#workoutForm"));
+		var theWeek = calculateWeek(theData.theWorkoutDate);
+			theData = addWeekToData(theWeek,theData);
 		var valid = validateWorkoutForm(theData);
 		if(valid) {
 			$(this).prop("disabled", true);
@@ -10,7 +12,6 @@ $(function() {
 			$(".form-good").removeClass("form-good");
 		} else {
 			console.log("Form failed");
-
 		}
 	});
 });
@@ -44,9 +45,20 @@ function validateWorkoutForm(theData) {
 	});
 	return valid;
 }
+function calculateWeek(theWorkoutDate) {
+	var oneDay = 1000*60*60*24;
+	workoutDate = new Date(theWorkoutDate);
+	var diff = workoutDate.getTime() - startDate; //startDate GLOBAL VAR atm (in app.js)
+	var theWeek = Math.ceil((diff/oneDay)/7);
+	return theWeek;
+}
+function addWeekToData(theWeek,theData) {
+	theData["theWeek"] = theWeek;
+	return theData;
+}
 
 function addWorkoutToFiBa(theWorkout) {
-	var ref = new Firebase("https://raxworkout.firebaseio.com/workouts")
+	var ref = new Firebase("https://raxworkout.firebaseio.com/workouts");
 	ref.push(theWorkout, function(error) {
 		if(error) {
 			$("#addWorkoutStatusBad").removeClass('hidden');

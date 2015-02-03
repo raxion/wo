@@ -1,7 +1,7 @@
 $(function() {
 	getWorkoutFromFiBa();
 	getWeighFromFiBa();
-	loguin();
+	//loguin();
 	$("#theWorkoutDate, #theWeighDate").datepicker({
 		dateFormat: "yy-mm-dd",
 		firstDay: 1,
