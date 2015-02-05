@@ -69,29 +69,42 @@ function weighArrayFunction(snapshot) {
 }
 
 function addWeighToPage(weight) {
+	var date = ['x'];
 	var vikt = ['Vikt'];
 	var bf = ['BF %'];
 	var vatten = ['Vatten %'];
 	var muskler = ['Muskler %'];
 	var skelett = ['Skelett'];
 	$.each(weight, function(index, val) {
+		date.push(val.theWeighDate);
 		vikt.push(val.theWeigh);
 		bf.push(val.theBF);
 		vatten.push(val.theWater)
 		muskler.push(val.theMuscle);
 		skelett.push(val.theBone);
 	});
+	console.log(date);
 	var weighArr = weight;
 	var chart = c3.generate({
 		bindto: '#chart',
 		data: {
+			x: 'x',
 			columns: [
-			vikt,
-			bf,
-			vatten,
-			muskler,
-			skelett
+				date,
+				vikt,
+				bf,
+				vatten,
+				muskler,
+				skelett
 			]
+		},
+		axis: {
+			x: {
+				type: 'timeseries',
+				tick: {
+					format: '%Y-%m-%d'
+				}
+			}
 		}
 	});
 }
