@@ -11,93 +11,97 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div id="wrapper">
-		<header>
-			<button id="slideIt" class="btn btn-primary">Byt Vy</button><span id="loginSpan" class="glyphicon glyphicon-log-in"></span>
+	<div class="wrapper">
+		<header class="harry-potter-invisibility-cloak">
+			<button id="slideIt" class="btn btn-primary">Byt Vy</button>
+			<span id="loginSpan" class="loginSpan glyphicon glyphicon-log-in"></span>
 		</header>
-		<div id="workoutWrapper">
-			<div id="workoutFormWrapper">
-				<form role="form" id="workoutForm">
+		<div class="content">
+			<div id="workoutWrapper" class="item-Wrapper">
+				<div id="workoutFormWrapper" class="item-FormWrapper">
+					<form role="form" id="workoutForm">
+						<div class="form-group">
+							<label for="theWorkoutDate">Datum *</label>
+							<input type="text" id="theWorkoutDate" class="form-control" name="theWorkoutDate" placeholder="YYY-MM-DD" required>
+						</div>
+						<div class="form-group">
+							<label for="theType">Typ av träning *</label>
+							<input type="text" id="theType" class="form-control" name="theType" placeholder="Ex. Gruppträning" required>
+						</div>
+						<div class="form-group">
+							<label for="theActivity">Aktivitet *</label>
+							<input type="text" id="theActivity" class="form-control" name="theActivity"  placeholder="Ex. Spinning" required>
+						</div>
+						<div class="form-group">
+							<label for="theDuration">Tid *</label>
+							<input type="text" id="theDuration" class="form-control" name="theDuration" placeholder="Ex. 45min" required>
+						</div>
+						<div class="form-group">
+							<label for="theWorkoutComment">Kommentar</label>
+							<textarea id="theWorkoutComment" class="form-control" name="theWorkoutComment" placeholder="Bra, dåligt etc"></textarea>
+						</div>
+						<button id="theAddWorkoutBtn" class="btn btn-primary">Lägg till</button>
+						<span id="addWorkoutStatusGood" class="hidden text-success">Tillfälle tillagt</span>
+						<span id="addWorkoutStatusBad" class="hidden text-danger">Fel uppstod!</span>
+					</form>
+				</div>
+				<div id="workoutListWrapper" class="item-DataWrapper">
+					<div id="avgWorkouts"></div>
+					<div id="workoutList"></div>
+				</div>
+			</div>
+			<div id="weighWrapper" class="item-Wrapper">
+				<div id="weighChartWrapper" class="item-DataWrapper">
+					<div id="chart"></div>
+				</div>
+				<div id="weighFormWrapper" class="item-FormWrapper">
+					<form role="form" action="" id="weighForm">
+						<div class="form-group">
+							<label for="theWeighDate">Datum</label>
+							<input type="text" id="theWeighDate" class="form-control" name="theWeighDate" placeholder="YYYY-MM-DD" required>
+						</div>
+						<div class="form-group">
+							<label for="theWeigh">Massa</label>
+							<input type="text" id="theWeigh" class="form-control" name="theWeigh" placeholder="Vikt" required>
+						</div>
+						<div class="form-group">
+							<label for="theBF">BF</label>
+							<input type="text" id="theBF" class="form-control" name="theBF"  placeholder="Body Fat %" required>
+						</div>
+						<div class="form-group">
+							<label for="theWater">Vatten</label>
+							<input type="text" id="theWater" class="form-control" name="theWater" placeholder="Vatten %" required>
+						</div>
+						<div class="form-group">
+							<label for="theMuscle">Muskler</label>
+							<input type="text" id="theMuscle" class="form-control" name="theMuscle" placeholder="Muskler %" required>
+						</div>
+						<div class="form-group">
+							<label for="theBone">Skelett</label>
+							<input type="text" id="theBone" class="form-control" name="theBone" placeholder="Skelett" required>
+						</div>
+						<button id="theAddWeighBtn" class="btn-add-weight btn btn-primary">Lägg till</button>
+						<span id="addWeighStatusGood" class="hidden text-success">Vägning tillagd</span>
+						<span id="addWeighStatusBad" class="hidden text-danger">Fel uppstod!</span>
+					</form>
+				</div>
+			</div>
+			<div id="loginFormWrapper" class="loginFormWrapper harry-potter-invisibility-cloak">
+				Log in
+				<form role="form" id="loginForm" action="">
 					<div class="form-group">
-						<label for="theWorkoutDate">Datum</label>
-						<input type="text" id="theWorkoutDate" class="form-control" name="theWorkoutDate" placeholder="YYY-MM-DD" required>
+						<label for="uname"></label>
+						<input type="text" id="uname" placeholder="Namn">
 					</div>
 					<div class="form-group">
-						<label for="theType">Typ av träning</label>
-						<input type="text" id="theType" class="form-control" name="theType" placeholder="Ex. Gruppträning" required>
+						<label for="upass"></label>
+						<input type="password" id="upass" placeholder="Lösen">
 					</div>
-					<div class="form-group">
-						<label for="theActivity">Aktivitet</label>
-						<input type="text" id="theActivity" class="form-control" name="theActivity"  placeholder="Ex. Spinning" required>
-					</div>
-					<div class="form-group">
-						<label for="theDuration">Tid</label>
-						<input type="text" id="theDuration" class="form-control" name="theDuration" placeholder="Ex. 45min" required>
-					</div>
-					<div class="form-group">
-						<label for="theWorkoutComment">Kommentar</label>
-						<textarea id="theWorkoutComment" class="form-control" name="theWorkoutComment"></textarea>
-					</div>
-					<button id="theAddWorkoutBtn" class="btn btn-primary">Lägg till</button>
-					<span id="addWorkoutStatusGood" class="hidden text-success">Tillfälle tillagt</span>
-					<span id="addWorkoutStatusBad" class="hidden text-danger">Fel uppstod!</span>
+					<button>Log in</button>
 				</form>
 			</div>
-			<div id="workoutListWrapper">
-				<div id="avgWorkouts"></div>
-				<div id="workoutList"></div>
-			</div>
 		</div>
-		<div id="weighWrapper">
-			<div id="weighChartWrapper">
-				<div id="chart"></div>
-			</div>
-			<div id="weighFormWrapper">
-				<form role="form" action="" id="weighForm">
-					<div class="form-group">
-						<label for="theWeighDate">Datum</label>
-						<input type="text" id="theWeighDate" class="form-control" name="theWeighDate" placeholder="YYYY-MM-DD" required>
-					</div>
-					<div class="form-group">
-						<label for="theWeigh">Massa</label>
-						<input type="text" id="theWeigh" class="form-control" name="theWeigh" placeholder="Vikt" required>
-					</div>
-					<div class="form-group">
-						<label for="theBF">BF</label>
-						<input type="text" id="theBF" class="form-control" name="theBF"  placeholder="Body Fat %" required>
-					</div>
-					<div class="form-group">
-						<label for="theWater">Vatten</label>
-						<input type="text" id="theWater" class="form-control" name="theWater" placeholder="Vatten %" required>
-					</div>
-					<div class="form-group">
-						<label for="theMuscle">Muskler</label>
-						<input type="text" id="theMuscle" class="form-control" name="theMuscle" placeholder="Muskler %" required>
-					</div>
-					<div class="form-group">
-						<label for="theBone">Skelett</label>
-						<input type="text" id="theBone" class="form-control" name="theBone" placeholder="Skelett" required>
-					</div>
-					<button id="theAddWeighBtn" class="btn btn-primary">Lägg till</button>
-					<span id="addWeighStatusGood" class="hidden text-success">Vägning tillagd</span>
-					<span id="addWeighStatusBad" class="hidden text-danger">Fel uppstod!</span>
-				</form>
-			</div>
-		</div>
-		<div id="loginFormWrapper" class="harry-potter-invisibility-cloak">
-			Log in
-			<form role="form" id="loginForm" action="">
-				<div class="form-group">
-					<label for="uname"></label>
-					<input type="text" id="uname" placeholder="Namn">
-				</div>
-				<div class="form-group">
-					<label for="upass"></label>
-					<input type="password" id="upass" placeholder="Lösen">
-				</div>
-				<button>Log in</button>
-			</form>
-		</div>
+		<footer></footer>
 	</div>
 	<script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
 	<script src="js/jquery-2.1.1.min.js"></script>
