@@ -66,7 +66,7 @@ function calcAvgWorkouts(numOfWorkouts) {
 
 function getWeighFromFiBa() {
 	var ref = new Firebase('https://raxworkout.firebaseio.com/weigh');
-	ref.once('value', function(snapshot) {
+	ref.orderByChild("theWeighDate").once('value', function(snapshot) {
 		addWeighToPage(snapshot.val());
 	});
 }
